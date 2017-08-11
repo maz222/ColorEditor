@@ -35,13 +35,21 @@ function verifyRGB(value) {
 	return(Math.min(Math.max(value,0),255));
 }
 
+function RGBtoHEX(strValue) {
+	strValue = parseInt(strValue).toString(16).toUpperCase();
+	if(strValue.length < 2) {
+		strValue = "0" + strValue;
+	}
+	return strValue;
+}
+
 function setHex() {
 	var redVal = document.getElementById("red-slider").value;
 	var greenVal = document.getElementById("green-slider").value;
 	var blueVal = document.getElementById("blue-slider").value;
 	var hexField = document.getElementById("hex-text");
 	hexField.style.backgroundColor = "rgb(" + redVal + "," + greenVal + "," + blueVal + ")";
-	hexVal = [parseInt(redVal).toString(16).toUpperCase(), parseInt(greenVal).toString(16).toUpperCase(), parseInt(blueVal).toString(16).toUpperCase()];
+	hexVal = [RGBtoHEX(redVal), RGBtoHEX(greenVal), RGBtoHEX(blueVal)];
 	console.log(hexVal);
 	hexVal = "#" + hexVal[0] + hexVal[1] + hexVal[2];
 	hexField.value = hexVal;
