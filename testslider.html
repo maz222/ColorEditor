@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="editorStyle.css">
+		<script src="colorUtilities.js"></script>
+		<script src="editorScript.js"></script>
+	</head>
+	<body>
+		<div class="editor-panel">
+			<form>
+				<div class="hex-container">
+					<input type="text" value="#000000" id="hex-text" onChange="setFromHex(this.value)">
+				</div>
+				<div class="slider-container">
+					<input type="range" min="0" max="255" step="1" value="0" id="red-slider" onInput="setRed(this.value)">
+					<input type="text" value="0" id="red-text" onChange="setRed(this.value)">
+				</div>
+				<div class="slider-container">
+					<input type="range" min="0" max="255" step="1" value="0" id="green-slider" onInput="setGreen(this.value)">
+					<input type="text" value="0" id="green-text" onChange="setGreen(this.value)">
+				</div>
+				<div class="slider-container">
+					<input type="range" min="0" max="255" step="1" value="0" id="blue-slider" onInput="setBlue(this.value)">
+					<input type="text" value="0" id="blue-text" onChange="setBlue(this.value)">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

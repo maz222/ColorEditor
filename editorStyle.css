@@ -1,0 +1,59 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.editor-panel {
+	background-color: rgb(80,80,80);
+	display: flex;
+	flex-direction: column;
+	padding:20px;
+	width: 50%;
+}
+
+.slider-container, .hex-container {
+	width: 100%;
+}
+
+.hex-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.hex-container > input {
+	width: 100%;
+	color: black;
+	font-size: 1.1em;
+	padding: 10px;
+	text-align: center;
+	font-weight: 800;
+	border-radius: 5px;
+	border: none;
+}
+
+.slider-container {
+	margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: 75% 25%;
+
+}
+.slider-container > input[type="text"] {
+	font-size: 1.1em;
+	padding: 10px;
+	margin-left: 50px;
+	text-align: center;
+	color: white;
+	font-weight: 800;
+	border-radius: 5px;
+	border: none;
+}
+#red-text {
+	background-color: red;
+}
+#green-text {
+	background-color: green;
+}
+#blue-text {
+	background-color: blue;
+}
