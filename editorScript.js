@@ -53,7 +53,6 @@ function setFromHex(value) {
 	{
 		value = value.slice(1,value.length);
 	}
-	console.log(value);
 	if(value.length < 6 || !verifyHEX(value.slice(0,2)) || !verifyHEX(value.slice(2,4)) || !verifyHEX(value.slice(4,6)))
 	{
 		value = "000000";
