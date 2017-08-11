@@ -49,11 +49,11 @@ body {
 	border: none;
 }
 #red-text {
-	background-color: red;
+	background-color: rgb(255,0,0);
 }
 #green-text {
-	background-color: green;
+	background-color: rgb(0,255,0);
 }
 #blue-text {
-	background-color: blue;
+	background-color: rgb(0,0,255);
 }
