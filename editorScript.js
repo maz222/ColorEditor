@@ -41,7 +41,8 @@ function setHex() {
 	var blueVal = document.getElementById("blue-slider").value;
 	var hexField = document.getElementById("hex-text");
 	hexField.style.backgroundColor = "rgb(" + redVal + "," + greenVal + "," + blueVal + ")";
-	hexVal = RGBtoHEX([redVal, greenVal, blueVal]);
+	hexVal = [parseInt(redVal).toString(16).toUpperCase(), parseInt(greenVal).toString(16).toUpperCase(), parseInt(blueVal).toString(16).toUpperCase()];
+	console.log(hexVal);
 	hexVal = "#" + hexVal[0] + hexVal[1] + hexVal[2];
 	hexField.value = hexVal;
 	hexField.style.color = getHexTextColor([redVal, greenVal, blueVal]);
@@ -57,7 +58,7 @@ function setFromHex(value) {
 	{
 		value = "000000";
 	}
-	var RGB = [HEXtoRGB(value.slice(0,2)), HEXtoRGB(value.slice(2,4)), HEXtoRGB(value.slice(4,6))];
+	var RGB = [parseInt(value.slice(0,2), 16), parseInt(value.slice(2,4), 16), parseInt(value.slice(4,6), 16)];
 	setRed(RGB[0]);
 	setGreen(RGB[1]);
 	setBlue(RGB[2]);
