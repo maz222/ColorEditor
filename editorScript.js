@@ -48,11 +48,13 @@ function setHex() {
 }
 
 function setFromHex(value) {
+	value = value.replace(/\s+/, "");
 	if(value[0] == "#")
 	{
 		value = value.slice(1,value.length);
 	}
-	if(!verifyHEX(value))
+	console.log(value);
+	if(value.length < 6 || !verifyHEX(value.slice(0,2)) || !verifyHEX(value.slice(2,4)) || !verifyHEX(value.slice(4,6)))
 	{
 		value = "000000";
 	}
@@ -64,9 +66,7 @@ function setFromHex(value) {
 
 function getHexTextColor(RGBvalue) {
 	var whiteContrast = Math.abs(255 - RGBvalue[0]) + Math.abs(255 - RGBvalue[1]) + Math.abs(255 - RGBvalue[2]);
-	console.log(whiteContrast);
 	var RGBTotal = parseInt(RGBvalue[0]) + parseInt(RGBvalue[1]) + parseInt(RGBvalue[2]);
-	console.log(RGBTotal);
 	if(whiteContrast > RGBTotal) {
 		return "rgb(255,255,255)";
 	}
@@ -75,5 +75,11 @@ function getHexTextColor(RGBvalue) {
 
 function verifyHEX(value) {
 	var val = parseInt(value, 16);
-	return (val.toString(16) === value.toLowerCase());
+	if(isNaN(val)) {
+		return false;
+	}
+	if(val > 255 || val < 0) {
+		return false;
+	}
+	return true;
 }
